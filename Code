@@ -1,0 +1,19 @@
+__author__ = 'Aaron OBrien'
+with open('keywords.txt', 'r') as file1:
+    with open('source_cpp.txt', 'r') as file2:
+        readFile1 = file1.readlines()
+        readFile2 = file2.readlines()
+        readFile1.sort()
+        for keyword in readFile1:
+            for sourceLine in readFile2:
+                if keyword.strip() in sourceLine.strip():
+                    print keyword.strip()
+                    print
+'''
+        shown above are two for loops
+        one to loop in each keyword
+        the other to loop in each source line
+        within the source loop, an if statement is declared
+        if the keyword is in source line, print keyword
+        otherwise, proceed
+'''
