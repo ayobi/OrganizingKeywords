@@ -1,0 +1,43 @@
+
+#include <iostream>
+using namespace std;
+
+int main () {
+	string s;
+	int len;
+	bool palindrome = true ; 
+
+	// read the string from cin; ignore the carriage return
+	cout << "Enter a string: ";
+	getline(cin, s, '\r');
+	cout << endl ;
+
+	// determine if s is a palindrome
+	// if either character is a space, advance to next character
+	len = s.length();
+	int i = 0, j = len - 1;
+	while (i < len/2 && palindrome)
+	{
+		if (s[i] != ' ')
+		{
+			if (s[j] != ' ')
+			{
+				if (s[i] != s[j])
+					palindrome = false ;
+				i++;
+				j--;
+			}
+			else
+				j--;
+	    }
+		else
+			i++;
+	}
+
+	if (palindrome)
+		cout << s << " is a palindrome." << endl ;
+	else
+		cout << s << " is NOT a palindrome." << endl ;
+	return 0;
+}
+
